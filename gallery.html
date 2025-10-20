@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Alexis Georgiades Photography</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #000;
+        }
+        
+        header {
+            background: #000;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+        
+        nav {
+            background: #111;
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.6;
+        }
+        
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .gallery-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background: #111;
+            border: 1px solid #333;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: #666;
+        }
+        
+        .category-card h3 {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .category-card p {
+            color: #888;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        
+        footer {
+            background: #000;
+            color: #666;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+            }
+            
+            .gallery-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ALEXIS GEORGIADES</h1>
+        <p>Photography</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    
+    <section>
+        <h2>Gallery Collections</h2>
+        <div class="gallery-categories">
+            <a href="discovery-park.html" class="category-card">
+                <h3>Discovery Park</h3>
+                <p>Nature & Greenery</p>
+            </a>
+            <a href="omas-house.html" class="category-card">
+                <h3>Oma's House</h3>
+                <p>Cyprus</p>
+            </a>
+            <a href="pumpkin-fall.html" class="category-card">
+                <h3>Pumpkin & Fall</h3>
+                <p>Autumn colors and seasonal moments</p>
+            </a>
+            <a href="athens.html" class="category-card">
+                <h3>Athens</h3>
+                <p>Ancient history meets modern life</p>
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Alexis Georgiades. All rights reserved.</p>
+    </footer>
+</body>
+</html>
