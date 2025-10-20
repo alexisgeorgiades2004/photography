@@ -74,6 +74,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 2rem;
+            min-height: 50vh;
         }
         
         h2 {
@@ -85,16 +86,6 @@
             letter-spacing: 2px;
         }
         
-        h3 {
-            font-size: 1.8rem;
-            margin: 3rem 0 2rem 0;
-            color: #fff;
-            font-weight: 300;
-            letter-spacing: 1px;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #333;
-        }
-        
         .about-content {
             max-width: 700px;
             margin: 0 auto;
@@ -102,80 +93,6 @@
             font-size: 1.1rem;
             color: #ccc;
             line-height: 1.8;
-        }
-        
-        .gallery-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .category-card {
-            background: #111;
-            border: 1px solid #333;
-            padding: 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-5px);
-            border-color: #666;
-        }
-        
-        .category-card h3 {
-            margin: 0;
-            padding: 0;
-            border: none;
-            font-size: 1.5rem;
-            color: #fff;
-        }
-        
-        .category-card p {
-            color: #888;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .photo-grid {
-            column-count: 3;
-            column-gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .photo-item {
-            position: relative;
-            overflow: hidden;
-            background: #1a1a1a;
-            cursor: pointer;
-            margin-bottom: 1.5rem;
-            break-inside: avoid;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        .photo-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .photo-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .placeholder-img {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            color: #666;
-            font-size: 3rem;
         }
         
         .contact-content {
@@ -248,20 +165,6 @@
             nav ul {
                 gap: 1.5rem;
             }
-            
-            .gallery-categories {
-                grid-template-columns: 1fr;
-            }
-            
-            .photo-grid {
-                column-count: 1;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .photo-grid {
-                column-count: 2;
-            }
         }
     </style>
 </head>
@@ -273,9 +176,8 @@
     
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
     
@@ -286,195 +188,6 @@
             <p style="margin-top: 1rem;">From the vibrant greens of natural landscapes to the warm autumn tones of fall, and the timeless beauty of Mediterranean destinations, my work tells stories through light, composition, and perspective.</p>
             <p style="margin-top: 1rem;">Each photograph is a moment frozen in time, inviting you to see the world through my lens.</p>
         </div>
-    </section>
-    
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-categories">
-            <a href="#nature-greenery" style="text-decoration: none;">
-                <div class="category-card">
-                    <h3>Nature & Greenery</h3>
-                    <p>Explore lush landscapes and natural beauty</p>
-                </div>
-            </a>
-            <a href="#pumpkin-fall" style="text-decoration: none;">
-                <div class="category-card">
-                    <h3>Pumpkin & Fall</h3>
-                    <p>Autumn colors and seasonal moments</p>
-                </div>
-            </a>
-            <a href="#cyprus" style="text-decoration: none;">
-                <div class="category-card">
-                    <h3>Cyprus</h3>
-                    <p>Mediterranean island paradise</p>
-                </div>
-            </a>
-            <a href="#athens" style="text-decoration: none;">
-                <div class="category-card">
-                    <h3>Athens</h3>
-                    <p>Ancient history meets modern life</p>
-                </div>
-            </a>
-        </div>
-        
-        <div id="nature-greenery">
-            <h3>Nature & Greenery</h3>
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/20251017_231444490_iOS.jpg" alt="Discovery Park sunset">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/20251017_232724000_iOS.jpg" alt="Discovery Park trail">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/20251017_233409490_iOS.jpg" alt="Discovery Park view">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/20251017_234119000_iOS.jpg" alt="Discovery Park landscape">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/bro_more_algae.jpg" alt="Algae closeup">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/broken bench saturated.jpg" alt="Broken bench">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/broken bench.jpg" alt="Bench in nature">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/corner tree.jpg" alt="Corner tree">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/curved land pic.jpg" alt="Curved landscape">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/dark_algae_zoomed_in.jpg" alt="Dark algae detail">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/dark_algae.jpg" alt="Dark algae">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/open_path.jpg" alt="Open path">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/redgreenleaf.jpg" alt="Red and green leaf">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/sand cliff saturated.jpg" alt="Sand cliff saturated">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/sand cliff.jpg" alt="Sand cliff">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/sunset.jpg" alt="Sunset">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/tall trees.jpg" alt="Tall trees">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/tree.jpg" alt="Tree">
-                </div>
-                <div class="photo-item">
-                    <img src="101725-DiscoveryPark/water_hill.jpg" alt="Water and hill">
-                </div>
-            </div>
-        </div>
-        
-        <div id="pumpkin-fall">
-            <h3>Pumpkin & Fall</h3>
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <div class="placeholder-img">🍂</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🍁</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🌰</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🍂</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🎃</div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="cyprus">
-            <h3>Cyprus</h3>
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <div class="placeholder-img">🏖️</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🌊</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">⛱️</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🌴</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🏛️</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">⛵</div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="athens">
-            <h3>Athens</h3>
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <div class="placeholder-img">🏛️</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🏺</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🏛️</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🏙️</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">⛪</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">🌆</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- TO ADD MORE CATEGORIES: Copy this template below -->
-        <!--
-        <div id="new-category-name">
-            <h3>New Category Name</h3>
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <div class="placeholder-img">📷</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">📷</div>
-                </div>
-                <div class="photo-item">
-                    <div class="placeholder-img">📷</div>
-                </div>
-            </div>
-        </div>
-        
-        And add this to the gallery-categories section above:
-        <a href="#new-category-name" style="text-decoration: none;">
-            <div class="category-card">
-                <h3>New Category Name</h3>
-                <p>Description of the category</p>
-            </div>
-        </a>
-        -->
-        
     </section>
     
     <section id="contact">
@@ -496,21 +209,5 @@
     <footer>
         <p>&copy; 2025 Alexis Georgiades. All rights reserved.</p>
     </footer>
-    
-    <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
