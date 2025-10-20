@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexis Georgiades - Photography Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #000;
+        }
+        
+        header {
+            background: #000;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+        
+        nav {
+            background: #111;
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.6;
+        }
+        
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 3/2;
+            background: #1a1a1a;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, opacity 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-overlay p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: #1a1a1a;
+            cursor: pointer;
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .placeholder-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #666;
+            font-size: 3rem;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            color: #ccc;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border: 1px solid #fff;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .contact-links a:hover {
+            background: #fff;
+            color: #000;
+        }
+        
+        footer {
+            background: #000;
+            color: #666;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ALEXIS GEORGIADES</h1>
+        <p>Photography</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#seabright">Seabright</a></li>
+            <li><a href="#greece-cyprus">Greece/Cyprus</a></li>
+            <li><a href="#fall-seattle">Fall in Seattle</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-content">
+            <p>Welcome to my photography portfolio. I capture moments from my travels and the beauty of everyday life. From the coastal charm of Seabright to the ancient landscapes of Greece and Cyprus, and the golden autumn hues of Seattle.</p>
+            <p style="margin-top: 1rem;">Each collection tells a unique story through light, composition, and perspective.</p>
+        </div>
+    </section>
+    
+    <section id="seabright">
+        <h2>Seabright</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <div class="placeholder-img">🌊</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🏖️</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">⛵</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🌅</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🦭</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🌊</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="greece-cyprus">
+        <h2>Greece / Cyprus</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <div class="placeholder-img">🏛️</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🌴</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">⛱️</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🏺</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🌊</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🏖️</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="fall-seattle">
+        <h2>Fall in Seattle</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <div class="placeholder-img">🍂</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🏙️</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🌲</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">☕</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🍁</div>
+            </div>
+            <div class="photo-item">
+                <div class="placeholder-img">🌧️</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-content">
+            <p>Interested in prints or collaboration? Get in touch.</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+                <a href="https://github.com/alexisgeorgiades" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Alexis Georgiades. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
