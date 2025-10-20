@@ -85,6 +85,16 @@
             letter-spacing: 2px;
         }
         
+        h3 {
+            font-size: 1.8rem;
+            margin: 3rem 0 2rem 0;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 1px;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+        
         .about-content {
             max-width: 700px;
             margin: 0 auto;
@@ -94,73 +104,56 @@
             line-height: 1.8;
         }
         
-        .gallery-grid {
+        .gallery-categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-bottom: 4rem;
         }
         
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 3/2;
-            background: #1a1a1a;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease, opacity 0.3s;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        .category-card {
+            background: #111;
+            border: 1px solid #333;
             padding: 2rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, border-color 0.3s;
         }
         
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: #666;
         }
         
-        .gallery-overlay h3 {
-            color: white;
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
+        .category-card h3 {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: 1.5rem;
+            color: #fff;
         }
         
-        .gallery-overlay p {
-            color: #ccc;
+        .category-card p {
+            color: #888;
+            margin-top: 0.5rem;
             font-size: 0.9rem;
         }
         
         .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            column-count: 3;
+            column-gap: 1.5rem;
             margin-top: 2rem;
         }
         
         .photo-item {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 4/3;
             background: #1a1a1a;
             cursor: pointer;
+            margin-bottom: 1.5rem;
+            break-inside: avoid;
+            display: inline-block;
+            width: 100%;
         }
         
         .photo-item img {
@@ -192,11 +185,31 @@
             color: #ccc;
         }
         
+        .contact-info {
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info p {
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #666;
+            transition: border-color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            border-color: #fff;
+        }
+        
         .contact-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
         }
         
@@ -236,12 +249,18 @@
                 gap: 1.5rem;
             }
             
-            .gallery-grid {
+            .gallery-categories {
                 grid-template-columns: 1fr;
             }
             
             .photo-grid {
-                grid-template-columns: 1fr;
+                column-count: 1;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .photo-grid {
+                column-count: 2;
             }
         }
     </style>
@@ -255,9 +274,7 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#seabright">Seabright</a></li>
-            <li><a href="#greece-cyprus">Greece/Cyprus</a></li>
-            <li><a href="#fall-seattle">Fall in Seattle</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -265,91 +282,177 @@
     <section id="about">
         <h2>About</h2>
         <div class="about-content">
-            <p>Welcome to my photography portfolio. I capture moments from my travels and the beauty of everyday life. From the coastal charm of Seabright to the ancient landscapes of Greece and Cyprus, and the golden autumn hues of Seattle.</p>
-            <p style="margin-top: 1rem;">Each collection tells a unique story through light, composition, and perspective.</p>
+            <p>Welcome to my photography portfolio. I'm a photographer passionate about capturing the beauty of nature, urban landscapes, and cultural experiences around the world.</p>
+            <p style="margin-top: 1rem;">From the vibrant greens of natural landscapes to the warm autumn tones of fall, and the timeless beauty of Mediterranean destinations, my work tells stories through light, composition, and perspective.</p>
+            <p style="margin-top: 1rem;">Each photograph is a moment frozen in time, inviting you to see the world through my lens.</p>
         </div>
     </section>
     
-    <section id="seabright">
-        <h2>Seabright</h2>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <div class="placeholder-img">🌊</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🏖️</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">⛵</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🌅</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🦭</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🌊</div>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-categories">
+            <a href="#nature-greenery" style="text-decoration: none;">
+                <div class="category-card">
+                    <h3>Nature & Greenery</h3>
+                    <p>Explore lush landscapes and natural beauty</p>
+                </div>
+            </a>
+            <a href="#pumpkin-fall" style="text-decoration: none;">
+                <div class="category-card">
+                    <h3>Pumpkin & Fall</h3>
+                    <p>Autumn colors and seasonal moments</p>
+                </div>
+            </a>
+            <a href="#cyprus" style="text-decoration: none;">
+                <div class="category-card">
+                    <h3>Cyprus</h3>
+                    <p>Mediterranean island paradise</p>
+                </div>
+            </a>
+            <a href="#athens" style="text-decoration: none;">
+                <div class="category-card">
+                    <h3>Athens</h3>
+                    <p>Ancient history meets modern life</p>
+                </div>
+            </a>
+        </div>
+        
+        <div id="nature-greenery">
+            <h3>Nature & Greenery</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <div class="placeholder-img">🌿</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌲</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🍃</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌳</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌱</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌾</div>
+                </div>
             </div>
         </div>
-    </section>
-    
-    <section id="greece-cyprus">
-        <h2>Greece / Cyprus</h2>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <div class="placeholder-img">🏛️</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🌴</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">⛱️</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🏺</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🌊</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🏖️</div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="fall-seattle">
-        <h2>Fall in Seattle</h2>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <div class="placeholder-img">🍂</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🏙️</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🌲</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">☕</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🍁</div>
-            </div>
-            <div class="photo-item">
-                <div class="placeholder-img">🌧️</div>
+        
+        <div id="pumpkin-fall">
+            <h3>Pumpkin & Fall</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <div class="placeholder-img">🎃</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🍂</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🍁</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌰</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🍂</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🎃</div>
+                </div>
             </div>
         </div>
+        
+        <div id="cyprus">
+            <h3>Cyprus</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <div class="placeholder-img">🏖️</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌊</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">⛱️</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌴</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🏛️</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">⛵</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="athens">
+            <h3>Athens</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <div class="placeholder-img">🏛️</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🏺</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🏛️</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🏙️</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">⛪</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">🌆</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TO ADD MORE CATEGORIES: Copy this template below -->
+        <!--
+        <div id="new-category-name">
+            <h3>New Category Name</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <div class="placeholder-img">📷</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">📷</div>
+                </div>
+                <div class="photo-item">
+                    <div class="placeholder-img">📷</div>
+                </div>
+            </div>
+        </div>
+        
+        And add this to the gallery-categories section above:
+        <a href="#new-category-name" style="text-decoration: none;">
+            <div class="category-card">
+                <h3>New Category Name</h3>
+                <p>Description of the category</p>
+            </div>
+        </a>
+        -->
+        
     </section>
     
     <section id="contact">
         <h2>Contact</h2>
         <div class="contact-content">
-            <p>Interested in prints or collaboration? Get in touch.</p>
+            <p>Interested in prints, licensing, or collaboration? I'd love to hear from you.</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p><strong>Based in:</strong> Seattle, Washington</p>
+            </div>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com">Email</a>
+                <a href="mailto:your.email@example.com">Email Me</a>
                 <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
-                <a href="https://github.com/alexisgeorgiades" target="_blank">GitHub</a>
+                <a href="https://github.com/alexisgeorgiades2004" target="_blank">GitHub</a>
             </div>
         </div>
     </section>
