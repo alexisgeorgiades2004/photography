@@ -85,6 +85,7 @@
             letter-spacing: 2px;
         }
         
+        /* MASONRY/COLLAGE LAYOUT - DO NOT CHANGE */
         .photo-grid {
             column-count: 3;
             column-gap: 1.5rem;
@@ -114,6 +115,7 @@
             transition: transform 0.3s;
             display: block;
         }
+        /* END MASONRY LAYOUT */
         
         /* Lightbox Styles */
         .lightbox {
@@ -264,7 +266,8 @@
     
     <section>
         <h2>Pumpkin Patch</h2>
-        <div class="photo-item" onclick="openLightbox(0)">
+        <div class="photo-grid">
+             <div class="photo-item" onclick="openLightbox(0)">
                 <img src="101825-PumpkinPatch/20251018_182950520_iOS 1.jpg" alt="20251018_182950520_iOS 1.jpg">
             </div>
             <div class="photo-item" onclick="openLightbox(1)">
@@ -430,6 +433,7 @@
     </footer>
     
     <script>
+        // PASTE YOUR JAVASCRIPT IMAGE ARRAY HERE FROM THE PYTHON SCRIPT
         const images = [
             '101825-PumpkinPatch/20251018_182950520_iOS 1.jpg',
             '101825-PumpkinPatch/20251018_182950520_iOS.jpg',
@@ -481,7 +485,6 @@
             '101825-PumpkinPatch/20251018_192437000_iOS 1.jpg',
             '101825-PumpkinPatch/20251018_192437000_iOS.jpg',
         ];
-
         
         let currentIndex = 0;
         
