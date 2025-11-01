@@ -60,3 +60,6 @@ if __name__ == "__main__":
     folder_name = sys.argv[2] if len(sys.argv) > 2 else None
     
     generate_photo_html(folder_path, folder_name)
+
+
+#python generate_photos.py 101725-DiscoveryPark-compressed
